@@ -39,6 +39,8 @@ export default {
     },
     methods: {
       fun(){
+        // alert("登录成功")
+        // this.$router.push("/index")
             // 获取输入框的数据
             let uemail = document.getElementsByName("uemail")[0].value;
             let upwd = document.getElementsByName("upwd")[0].value;

@@ -101,7 +101,7 @@ export default {
         },
          arr3(){
             var listc=this.arr.filter((v,i)=>{
-                if(i<=40&&i>30){
+                if(i<=90&&i>80){
                     return this.arr[i]
                 }
             })

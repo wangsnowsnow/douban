@@ -67,7 +67,7 @@ export default new Router({
     {
       path: '**',   // 错误路由
       redirect: '/index'   //重定向
-    },
+    }
   ]
 })
 

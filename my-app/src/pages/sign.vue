@@ -49,6 +49,9 @@ export default {
           : require("../../static/img/e1.png");
     },
     fun() {
+      // alert("注册成功")
+      // this.$router.push("/login")
+
       var uname = document.getElementsByName("uname")[0].value;
       var upwd = document.getElementsByName("pwd")[0].value;
       var uemail = document.getElementsByName("uemail")[0].value;
@@ -79,9 +82,9 @@ export default {
         }
       });
     },
-    // gologin(){
-    //   this.$router.push({path:"/status"})
-    // }
+    gologin(){
+      this.$router.push({path:"/status"})
+    }
   }
 };
 </script>

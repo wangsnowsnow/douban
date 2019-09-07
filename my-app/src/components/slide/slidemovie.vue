@@ -66,8 +66,8 @@ export default {
 }
 </script>
 <style>
-  .el-rate__icon {
-    font-size: 14px;
+ .start i {
+    font-size: 12px;
   }  
 </style>
 <style scoped>
