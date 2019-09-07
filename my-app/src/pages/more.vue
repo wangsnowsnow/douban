@@ -8,7 +8,7 @@
         <div class="content">
             <ul class="con">
                 <li v-for="(v,i) in obj" :key="i">
-                    <router-link :to="v.url" :style="v.titlecolor">{{v.title}}<p>{{v.content}}</p></a></router-link>
+                    <router-link :to="v.url" :style="{color:v.titlecolor}">{{v.title}}<p>{{v.content}}</p></a></router-link>
                 </li>
                 <!-- <li><a href="">电影<p>影院热映</p></a></li>
                 <li><a href="">同城<p>周末活动</p></a></li>
@@ -45,18 +45,18 @@ export default {
         return{
             obj:[
                
-                    {title:"电影",content:"影院热映",titlecolor:"color:#2384E8",url:"/movie"},
-                    {title:"电视",content:"正在热播",titlecolor:"color:#7a6adb",url:"/index"},
-                    {title:"图书",content:"畅销排行",titlecolor:"color:#9f7860",url:"/book"},
-                    {title:"同城",content:"周末活动",titlecolor:"color:#e6467e",url:"/index"},
-                    {title:"小组",content:"志趣相投",titlecolor:"color:#2ab8cc",url:"/group"},
-                    {title:"音乐",content:"新碟榜",titlecolor:"color:#f48f2e",url:"/index"},
-                    {title:"阅读",content:"电子书",titlecolor:"color:#9f7860",url:"/index"},
-                    {title:"游戏",content:"虚拟世界",titlecolor:"color:#5774c5",url:"/index"},
-                    {title:"应用",content:"玩手机",titlecolor:"color:#596cdd",url:"/index"},
-                    {title:"东西",content:"心爱之物",titlecolor:"color:#e1644d",url:"/index"},
-                    {title:"PM",content:"心愿歌单",titlecolor:"color:#40afc9",url:"/status"},
-                    {title:"市集",content:"购买原创",titlecolor:"color:#42db56",url:"/index"}
+                    {title:"电影",content:"影院热映",titlecolor:"#2384E8",url:"/movie"},
+                    {title:"电视",content:"正在热播",titlecolor:"#7a6adb",url:"/index"},
+                    {title:"图书",content:"畅销排行",titlecolor:"#9f7860",url:"/book"},
+                    {title:"同城",content:"周末活动",titlecolor:"#e6467e",url:"/index"},
+                    {title:"小组",content:"志趣相投",titlecolor:"#2ab8cc",url:"/group"},
+                    {title:"音乐",content:"新碟榜",titlecolor:"#f48f2e",url:"/index"},
+                    {title:"阅读",content:"电子书",titlecolor:"#9f7860",url:"/index"},
+                    {title:"游戏",content:"虚拟世界",titlecolor:"#5774c5",url:"/index"},
+                    {title:"应用",content:"玩手机",titlecolor:"#596cdd",url:"/index"},
+                    {title:"东西",content:"心爱之物",titlecolor:"#e1644d",url:"/index"},
+                    {title:"PM",content:"心愿歌单",titlecolor:"#40afc9",url:"/status"},
+                    {title:"市集",content:"购买原创",titlecolor:"#42db56",url:"/index"}
                 
             ]
         }

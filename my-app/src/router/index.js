@@ -13,6 +13,16 @@ Vue.use(Router)
 
 export default new Router({
   routes: [
+    { 
+      path: "/", 
+      redirect: '/index' //路由默认进入indexx
+    },
+    {
+      path: '/index',
+      name: 'Index',
+      component: Index
+    },
+    
     {
       path: '/login',
       name: 'Login',
@@ -23,11 +33,7 @@ export default new Router({
       name: 'Sign',
       component: Sign
     },
-    {
-      path: '/index',
-      name: 'Index',
-      component: Index
-    },
+   
     {
       path: '/movie',
       name: 'Movie',
@@ -57,6 +63,11 @@ export default new Router({
       path: '/detail',
       name: 'Detail',
       component: Detail
-    }
+    },
+    {
+      path: '**',   // 错误路由
+      redirect: '/index'   //重定向
+    },
   ]
 })
+

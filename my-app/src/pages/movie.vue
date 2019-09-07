@@ -4,29 +4,37 @@
             <topnav></topnav>
         </div>
         <div class="content">
-            <div class="hot" v-for="(v,i) in arr" :key="i">
-                <h2>{{arr[i]}}</h2>
-                <a>更多</a>
-            </div>
-            <!-- <div class="hot">
-                <h2>影院热映</h2>
-                <a href="">更多</a>
-            </div>
             <div class="hot">
                 <h2>影院热映</h2>
                 <a href="">更多</a>
             </div>
+            <div>
+                <slidemovie :movie="arr2"></slidemovie>
+            </div>
+            
+
             <div class="hot">
                 <h2>影院热映</h2>
                 <a href="">更多</a>
             </div>
+            
+            <div>
+                <slidemovie :movie="arr1"></slidemovie>
+            </div>
             <div class="hot">
-                <h2>影院热映</h2>
+                <h2>免费在线观影</h2>
                 <a href="">更多</a>
-            </div> -->
+            </div>
+            <div>
+                <slidemovie :movie="arr3"></slidemovie>
+            </div>
+            <div class="hot">
+                <h2>发现好电影</h2>
+                <a href="">更多</a>
+            </div>
         </div>
         <div class="banner">
-            <sildeone></sildeone>
+            <sildeone :lines="obj"></sildeone>
         </div>
         <div style="overflow:hidden;">
             <type></type>
@@ -41,18 +49,65 @@ import topnav from '../components/nav/topnav'
 import sildeone from '../components/slide/sildeone'
 import type from '../components/slide/type'
 import footers from '../components/footer/footers'
+import slidemovie from '../components/slide/slidemovie'
 export default {
     components:{
         topnav,
         sildeone,
         type,
-        footers
+        footers,
+        slidemovie
     },
     data() {
-        return {
-            arr:["影院热映","免费在线观影","新片速递","发现好电影"]
+        return {            
+            obj:[],
+            arr:[]
+
         }
     },
+    created() {
+        this.axios({
+            method: "get",
+            url:"/findmovie"
+        }).then((data)=>{
+            console.log(data.data.faxianhaodianying)
+            this.obj=data.data.faxianhaodianying
+        })
+
+        this.axios({
+            method:"get",
+            url:"/slidemovie"
+        }).then((data)=>{
+            console.log(data.data.movie)
+            this.arr=data.data.movie
+        })
+    },
+    computed: {
+        arr1(){
+            var lista=this.arr.filter((v,i)=>{
+                if(i<=30&&i>20){
+                    return this.arr[i]
+                }
+            })
+            return lista
+        },
+         arr2(){
+            var listb=this.arr.filter((v,i)=>{
+                if(i<=20&&i>10){
+                    return this.arr[i]
+                }
+            })
+            return listb;
+        },
+         arr3(){
+            var listc=this.arr.filter((v,i)=>{
+                if(i<=40&&i>30){
+                    return this.arr[i]
+                }
+            })
+            return listc;
+        }
+    }
 }
 </script>
 <style scoped>
